@@ -1,0 +1,17 @@
+<html>
+
+<head>
+  <title>Welcome to Rock Paper Siaaors</title>
+</head>
+
+<body>
+  <ul>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </ul>
+  <hr>
+  {% block content %}
+    <!-- page content go here -->
+  {% endblock %}
+</body>
+
+</html>
