@@ -9,18 +9,16 @@ import random
 def index():
     return render_template("index.html")
 
-@app.route('/add-player', methods=["POST"])
-def add_player():
-    player_name = request.form["title"]
-    player = Player(player_name)
-    add_new_player(player)
-    return redirect("/")
+@app.route('/welcome')
+def welcome():
+    return render_template("welcome.html")
 
-@app.route('/rps/<move>')
+
+@app.route('/ai/<move>')
 def rps(move):
     computer_choice = computer_move()
     player_move = move.lower()
     result = return_winner(player_move, computer_choice)
 
-    return render_template("rps.html", winner = result, player_move = player_move, computer_choice = computer_choice)
+    return render_template("ai.html", winner = result, player_move = player_move, computer_choice = computer_choice)
 

@@ -1,19 +1,16 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
 
 {% block content %}
-<p>Player Move: {{player_move}}</p>
-<p>Computer Move: {{computer_choice}}</p>
+<h1>COMPUTER BATTLE</h1>
+<p>To play, in the address bar add '/rps/' to the URL. then type your move.</p>
+<p>For example:</p>
+<p>http://url/rps/rock</p>
+<h2>Or click a move link below to make a move!</h2>
 
-{% if winner == 'tie' %}
-<h1>Tied! Try Again!</h1>
 
-{% else %}
-<h1>The winner is the {{winner.capitalize()}}</h1>
-{% endif %}
+<p><a href="{{ url_for('rps', move='scissors') }}">Scissors</a></p>
+<p><a href="{{ url_for('rps', move='rock') }}">Rock</a></p>
+<p><a href="{{ url_for('rps', move='paper') }}">Paper</a></p>
 
-<ul>
-    <li><a href="/">Play Again.</a></li>
-</ul>
-  
-{% endblock content %}
-
+{% endblock %}

@@ -1,8 +1,8 @@
 class Player():
 
-    def __init__(self, name, player_choice):
+    def __init__(self, name, move):
         self.name = name
-        self.player_choice = player_choice
+        self.move = move
 
 
 
