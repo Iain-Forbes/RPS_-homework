@@ -3,14 +3,14 @@
 
 {% block content %}
 <h1>COMPUTER BATTLE</h1>
-<p>To play, in the address bar add '/rps/' to the URL. then type your move.</p>
+<p>To play, in the address bar add '/ai/' to the URL. then type your move.</p>
 <p>For example:</p>
-<p>http://url/rps/rock</p>
-<h2>Or click a move link below to make a move!</h2>
+<p>http://url/ai/rock</p>
+<h2>Or click a move link below!</h2>
 
 
-<p><a href="{{ url_for('rps', move='scissors') }}">Scissors</a></p>
-<p><a href="{{ url_for('rps', move='rock') }}">Rock</a></p>
-<p><a href="{{ url_for('rps', move='paper') }}">Paper</a></p>
+<p><a href="{{ url_for('ai', move='scissors') }}">Scissors</a></p>
+<p><a href="{{ url_for('ai', move='rock') }}">Rock</a></p>
+<p><a href="{{ url_for('ai', move='paper') }}">Paper</a></p>
 
 {% endblock %}

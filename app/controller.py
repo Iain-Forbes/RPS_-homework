@@ -18,7 +18,7 @@ def player():
     return render_template("player.html")
 
 @app.route('/ai/<move>')
-def rps(move):
+def ai(move):
     computer_choice = computer_move()
     player_move = move.lower()
     result = return_winner(player_move, computer_choice)
