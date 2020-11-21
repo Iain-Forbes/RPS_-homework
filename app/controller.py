@@ -2,7 +2,7 @@ from flask import render_template, request, redirect
 from app import app
 from app.models.ai import *
 from app.models.player import Player 
-from app.models.game import Game
+from app.models.game import *
 import random
 
 # Setting up the routes for the webapp 
@@ -26,10 +26,10 @@ def ai(move):
 
     return render_template("ai.html", ai_winner = result, player_move = player_move, computer_choice = computer_choice)
 
-@app.route('/game/<move_1>/<move_2>')
-def game(move_1, move_2):
-    player1 = Player("Player 1", move_1)
-    player2 = Player("Player 2", move_1)
-    result = return_winner(player1, player2)
-    return render_template("result.html", pvp_winner = result)
+@app.route('/player/<player1_move>/<player2_move>')
+def game(player1_move, player2_move):
+    player1 =  player1_move.lower()
+    player2 =  player2_move.lower()
+    result = pvp_result(player1, player2)
+    return render_template("result.html", pvp_winner = result, player1_move = player1_move, player2_move = player2_move)
 
