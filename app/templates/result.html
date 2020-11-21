@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>Player 1 move: {{ player1_move.capitalize() }}</p>
+<p>Player 2 move: {{ player2_move.capitalize() }}</p>
+
+{% if winner == 'tie' %}
+<h1>Tied! Try Again!</h1>
+
+{% else %}
+<h1>The winner is the {{ pvp_winner.capitalize() }}</h1>
+{% endif %}
+
+<ul>
+    <li><a href="/player">Play Again.</a></li>
+</ul>
+  
+{% endblock content %}
