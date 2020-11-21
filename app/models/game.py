@@ -10,7 +10,7 @@ def pvp_result(player1_move, player2_move):
 
     if player1_move == player2_move:
         pvp_winner = "tie"
-    elif player1_move == "rock" and player2_move == "sissors":
+    elif player1_move == "rock" and player2_move == "scissors":
         pvp_winner = "player1"
     elif player1_move == "paper" and player2_move == "rock":
         pvp_winner = "player1"
