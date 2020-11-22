@@ -1,6 +1,5 @@
 from flask import render_template, request, redirect
 from app import app
-from app.models.ai import *
 from app.models.player import Player 
 from app.models.game import *
 import random
@@ -20,16 +19,17 @@ def player():
 
 @app.route('/ai/<move>')
 def ai(move):
-    computer_choice = computer_move()
-    player_move = move.lower()
-    result = return_winner(player_move, computer_choice)
+    player1 = Player("player1", move)
+    player2 = Player("Computer", "com")
+    game = Game(player1, player2)
+    result = game.play_computer(player1, player2)
+    
+    return render_template("ai.html", ai_winner = result, move1=player1.move, move2=player2.move)
 
-    return render_template("ai.html", ai_winner = result, player_move = player_move, computer_choice = computer_choice)
-
-@app.route('/player/<player1_move>/<player2_move>')
-def game(player1_move, player2_move):
-    player1 =  player1_move.lower()
-    player2 =  player2_move.lower()
-    result = pvp_result(player1, player2)
-    return render_template("result.html", pvp_winner = result, player1_move = player1_move, player2_move = player2_move)
-
+@app.route('/player/<move1>/<move2>')
+def game(move1, move2):
+    player1 =  Player("player1", move1)
+    player2 =  Player("player2", move2)
+    game = Game(player1, player2)
+    result = game.pvp_result(player1, player2)
+    return render_template("result.html", pvp_winner = result, move1 = move1, move2 = move2)
