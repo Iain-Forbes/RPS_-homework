@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>Player Move: {{ move1 }}</p>
-<p>Computer Move: {{ move2 }}</p>
+<main>
+<p>Player Move: {{ move1.capitalize() }}</p>
+<p>Computer Move: {{ move2.capitalize() }}</p>
 
 {% if winner == 'tie' %}
 <h1>Tied! Try Again!</h1>
 
 {% else %}
-<h1>The winner is the {{ ai_winner }}</h1>
+<h1>The winner is {{ ai_winner.capitalize() }}</h1>
 {% endif %}
+
 
 <ul>
     <li><a href="/computer">Play Again.</a></li>
 </ul>
-  
+</main> 
 {% endblock content %}
 

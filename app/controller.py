@@ -17,6 +17,8 @@ def welcome():
 def player():
     return render_template("player.html")
 
+
+# Route for computer game, creates a player, a faux player computer, and then calls the game class and runs the play computer function which determins winner
 @app.route('/ai/<move>')
 def ai(move):
     player1 = Player("player1", move)
@@ -26,6 +28,7 @@ def ai(move):
     
     return render_template("ai.html", ai_winner = result, move1=player1.move, move2=player2.move)
 
+# Route for player vs player game, creates two players and then calls the game class and runs the pvp results function to determin winner.
 @app.route('/player/<move1>/<move2>')
 def game(move1, move2):
     player1 =  Player("player1", move1)

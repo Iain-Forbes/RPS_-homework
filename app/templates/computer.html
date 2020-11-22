@@ -2,6 +2,7 @@
 
 
 {% block content %}
+<main>
 <h1>COMPUTER BATTLE</h1>
 <p>To play, in the address bar add '/ai/' to the URL. then type your move.</p>
 <p>For example:</p>
@@ -12,5 +13,5 @@
 <p><a href="{{ url_for('ai', move='scissors') }}">Scissors</a></p>
 <p><a href="{{ url_for('ai', move='rock') }}">Rock</a></p>
 <p><a href="{{ url_for('ai', move='paper') }}">Paper</a></p>
-
+</main>
 {% endblock %}

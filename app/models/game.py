@@ -1,15 +1,16 @@
 from app.models.player import *
 import random
 
-
+# Establish Game Class
 class Game:
     def __init__(self, player1, player2):
         self.player1 = player1
         self.player2 = player2
         self.choice = ["rock", "paper", "scissors"]
         
-        #PVP function
     
+    
+# Determin winner of Player vs Player Battle
     def pvp_result(self, player1, player2):
         
         pvp_winner = self.player2.name
@@ -25,10 +26,8 @@ class Game:
 
         return pvp_winner
         
-    # def computer_move(self):
-    #     return random.choice(list(self.choice))
 
- # Function to return winner,if statement compares play move to computer move, and either set plaeyer or computer to winner depending on choice
+ # Function to return winner of an AI game, sets second player as the computer and uses random choice to return a move, off the moves list setup the game class, then uses same set of IF statments from PVP to set winner. 
   
     def play_computer(self, player, computer):   
         if self.player2.name == "Computer" and self.player2.move == "com":
@@ -37,7 +36,7 @@ class Game:
         ai_winner = self.player2.name
         
         if self.player1.move == self.player2.move:
-            ai_winner = "tie"
+            ai_winner = "a tie"
         elif self.player1.move == "rock" and self.player2.move == "sissors":
             ai_winner = self.player1.name
         elif self.player1.move == "paper" and self.player2.move == "rock":
