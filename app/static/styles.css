@@ -1,5 +1,6 @@
 body{
-    background-color: beige;
+    background-color:#551a8b;
+    color: #96C93C;
 }
 
 h1{
@@ -10,12 +11,31 @@ h1{
     list-style: none;
     display: flex;
     flex-flow: wrap row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0;
+    font-family: fantasy;
+    padding: 0;
+    
 }
 
 main{    
-display: inline flex;
-justify-content: flex-end;
-flex-flow: nowrap column-reverse;
+    margin: auto;
+    margin-top: 60;
+    width: 500px;
+    border: 1px groove #96C93C;
+    display: grid flex;
+    position: relative;
+    text-align: center;
+    /* gap: 4px; */
+    flex-flow: wrap row;
+    justify-content: center;
+    justify-items: center;
+    font-size: large;
+}
+
+li{
+list-style: none;}
+
+a{
+    color:96C93C;
 }

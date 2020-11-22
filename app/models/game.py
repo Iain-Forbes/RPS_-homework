@@ -36,7 +36,7 @@ class Game:
         ai_winner = self.player2.name
         
         if self.player1.move == self.player2.move:
-            ai_winner = "a tie"
+            ai_winner = "tie"
         elif self.player1.move == "rock" and self.player2.move == "sissors":
             ai_winner = self.player1.name
         elif self.player1.move == "paper" and self.player2.move == "rock":
