@@ -24,9 +24,9 @@ def ai(move):
     player1 = Player("player1", move)
     player2 = Player("Computer", "com")
     game = Game(player1, player2)
-    result = game.play_computer(player1, player2)
+    result = game.winner(player1, player2)
     
-    return render_template("ai.html", ai_winner = result, move1=player1.move, move2=player2.move)
+    return render_template("ai.html", winner = result, move1=player1.move, move2=player2.move)
 
 # Route for player vs player game, creates two players and then calls the game class and runs the pvp results function to determin winner.
 @app.route('/player/<move1>/<move2>')
@@ -34,5 +34,5 @@ def game(move1, move2):
     player1 =  Player("player1", move1)
     player2 =  Player("player2", move2)
     game = Game(player1, player2)
-    result = game.pvp_result(player1, player2)
-    return render_template("result.html", pvp_winner = result, move1 = move1, move2 = move2)
+    result = game.winner(player1, player2)
+    return render_template("result.html", winner = result, move1 = move1, move2 = move2)

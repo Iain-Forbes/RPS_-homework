@@ -5,11 +5,11 @@
 <p>Player Move: {{ move1.capitalize() }}</p>
 <p>Computer Move: {{ move2.capitalize() }}</p>
 
-{% if ai_winner == 'tie' %}
+{% if winner == 'tie' %}
 <h1>Tied! Try Again!</h1>
 
 {% else %}
-<h1>The winner is {{ ai_winner.capitalize() }}</h1>
+<h1>The winner is {{ winner.capitalize() }}</h1>
 {% endif %}
 
 
